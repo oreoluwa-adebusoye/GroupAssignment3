@@ -15,6 +15,7 @@ public class Main {
             String url = ConUrl+":"+Port+"/"+Database+ "?user="+Username+"&password="+Password;
             Connection con = DriverManager.getConnection(url);
 
+            //unsecureInsertService();
 
             con.close();
         }catch(SQLException ex){
@@ -22,4 +23,12 @@ public class Main {
         }
 
     }
+    /*
+    public static void unsecureInsertService(Connection con) throws SQLException{
+        String sql = "INSERT INTO service(service_name) VALUES ("Blood Work Diagnostics");";
+        Statement st = con.createStatement();
+        st.executeUpdate(sql);
+
+    }
+     */
 }

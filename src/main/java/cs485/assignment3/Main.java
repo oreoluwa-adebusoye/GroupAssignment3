@@ -1,4 +1,4 @@
-package org.example;
+package cs485.assignment3;
 
 import java.sql.*;
 

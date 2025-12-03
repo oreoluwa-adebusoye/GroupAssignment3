@@ -5,8 +5,8 @@ public class Service extends AbstractService{
     private String name;
     private String type;
     private String description = null;
-    private Float base_price;
-    private Integer est_duration;
+    private Double BasePrice;
+    private Integer EstimatedDuration;
 
     public Integer getID(){
         return ID;
@@ -40,19 +40,26 @@ public class Service extends AbstractService{
         this.description = description;
     }
 
-    public Float getBase_price() {
-        return base_price;
+    public Double getBasePrice() {
+        return BasePrice;
     }
 
-    public void setBase_price(Float base_price) {
-        this.base_price = base_price;
+    public void setBasePrice(Double base_price) {
+        this.BasePrice = BasePrice;
     }
 
-    public Integer getEst_duration() {
-        return est_duration;
+    public Integer getEstimatedDuration() {
+        return EstimatedDuration;
     }
 
-    public void setEst_duration(Integer est_duration) {
-        this.est_duration = est_duration;
+    public void setEstimatedDuration(Integer estimatedDuration) {
+        this.EstimatedDuration = estimatedDuration;
+    }
+
+    @Override
+    public String toString() {
+        return getID() + ": " + getName() +
+                " (" + getType() + ") - $" + getBasePrice() +
+                " / " + getEstimatedDuration() + "min";
     }
 }

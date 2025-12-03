@@ -1,6 +1,6 @@
 package cs485.assignment3.model.entity;
 
-public class Service extends AbstractService{
+public class Service extends AbstractEntity {
     private Integer ID = null;
     private String name;
     private String type;

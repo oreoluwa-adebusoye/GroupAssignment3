@@ -43,6 +43,7 @@ public class ServiceCrudDialog extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    //goes to create service dialog
     private void createService() {
         NewServiceDialog dialog = new NewServiceDialog();
         dialog.pack();
@@ -50,7 +51,6 @@ public class ServiceCrudDialog extends JDialog {
     }
 
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 

@@ -16,6 +16,17 @@ public class MainFrame extends javax.swing.JFrame{
         JMenuBar menuBar = new JMenuBar();
 
         JMenu mnuFile = new JMenu("File");
+
+        //CRUD dialog
+        JMenuItem mnuService = new JMenuItem("Service CRUD");
+        mnuService.addActionListener(e -> {
+            ServiceCrudDialog dialog = new ServiceCrudDialog();
+            dialog.pack();
+            dialog.setVisible(true);
+        });
+        mnuFile.add(mnuService);
+
+        //exit button
         JMenuItem mnuExit = new JMenuItem("Exit");
         mnuExit.addActionListener(e -> { System.exit(0); });
         mnuFile.add(mnuExit);

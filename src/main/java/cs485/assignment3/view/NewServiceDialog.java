@@ -51,6 +51,7 @@ public class NewServiceDialog extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    //adds new line of info to database - nullable values can be empty
     private void onOK() {
         ServiceService service = new ServiceService();
         String serviceName = txtService.getText();
@@ -70,7 +71,6 @@ public class NewServiceDialog extends JDialog {
     }
 
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 

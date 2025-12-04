@@ -1,5 +1,6 @@
 package cs485.assignment3.view;
 
+import cs485.assignment3.controller.ServiceService;
 import cs485.assignment3.model.dao.ServiceDAO;
 import cs485.assignment3.model.entity.Service;
 
@@ -51,19 +52,19 @@ public class NewServiceDialog extends JDialog {
     }
 
     private void onOK() {
-        Service service = new Service();
-        service.setName(txtService.getText());
-        service.setType(txtType.getText());
-        service.setDescription(txtDescr.getText());
-        service.setBasePrice(Double.valueOf(txtPrice.getText()));
-        service.setEstimatedDuration(Integer.valueOf(txtTime.getText()));
+        ServiceService service = new ServiceService();
+        String serviceName = txtService.getText();
+        String type = txtType.getText();
+        String descr = txtDescr.getText();
+        Double price = Double.valueOf(txtPrice.getText());
+        Integer duration = Integer.valueOf(txtTime.getText());
 
-        ServiceDAO dao = new ServiceDAO();
         try{
-            dao.create(service);
+            service.createService(serviceName, type, descr, price, duration);
             dispose();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }

@@ -18,12 +18,4 @@ public class Main {
         frame.setVisible(true);
 
     }
-    /*
-    public static void secureInsertService() throws SQLException {
-        Connection con = DriverManager.getConnection(url);
-        String sql = "INSERT INTO service(service_name, service_type, description, base_price, estimated_duration) VALUES (?,?,?,?,?)";
-
-        PreparedStatement pst = con.prepareStatement(sql);
-    }
-     */
 }

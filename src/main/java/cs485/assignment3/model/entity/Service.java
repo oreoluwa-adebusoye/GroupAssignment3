@@ -20,24 +20,24 @@ public class Service extends AbstractEntity {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        name = Name;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String Type) {
+        type = Type;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String Description) {
+        description = Description;
     }
 
     public Double getBasePrice() {
@@ -45,7 +45,7 @@ public class Service extends AbstractEntity {
     }
 
     public void setBasePrice(Double base_price) {
-        this.BasePrice = BasePrice;
+        BasePrice = base_price;
     }
 
     public Integer getEstimatedDuration() {
@@ -53,7 +53,7 @@ public class Service extends AbstractEntity {
     }
 
     public void setEstimatedDuration(Integer estimatedDuration) {
-        this.EstimatedDuration = estimatedDuration;
+        EstimatedDuration = estimatedDuration;
     }
 
     @Override

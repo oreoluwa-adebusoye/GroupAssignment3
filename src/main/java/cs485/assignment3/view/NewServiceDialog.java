@@ -1,7 +1,11 @@
 package cs485.assignment3.view;
 
+import cs485.assignment3.model.dao.ServiceDAO;
+import cs485.assignment3.model.entity.Service;
+
 import javax.swing.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 
 public class NewServiceDialog extends JDialog {
     private JPanel contentPane;
@@ -47,7 +51,21 @@ public class NewServiceDialog extends JDialog {
     }
 
     private void onOK() {
-        System.out.println(txtService.getText());
+        Service service = new Service();
+        service.setName(txtService.getText());
+        service.setType(txtType.getText());
+        service.setDescription(txtDescr.getText());
+        service.setBasePrice(Double.valueOf(txtPrice.getText()));
+        service.setEstimatedDuration(Integer.valueOf(txtTime.getText()));
+
+        ServiceDAO dao = new ServiceDAO();
+        try{
+            dao.create(service);
+            dispose();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     private void onCancel() {

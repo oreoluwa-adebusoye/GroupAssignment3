@@ -1,34 +1,29 @@
 package cs485.assignment3;
 
+import cs485.assignment3.view.MainFrame;
+
 import java.sql.*;
 
 public class Main {
+    static String ConUrl = "jdbc:mysql://localhost"; //protocol + url
+    static String Port = "3306"; //default MySQL port
+    static String Database = "groupassignment3"; // database/schema name
+    static String Username = "root"; //read this from a local file
+    static String Password = "password"; //Also read this from a file
+
+    static String url = ConUrl+":"+Port+"/"+Database+ "?user="+Username+"&password="+Password;
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        String ConUrl = "jdbc:mysql://localhost"; //protocol + url
-        String Port = "3306"; //default MySQL port
-        String Database = "groupassignment3"; // database/schema name
-        String Username = "root"; //read this from a local file
-        String Password = "password"; //Also read this from a file
-
-        try{
-            String url = ConUrl+":"+Port+"/"+Database+ "?user="+Username+"&password="+Password;
-            Connection con = DriverManager.getConnection(url);
-
-            //unsecureInsertService();
-
-            con.close();
-        }catch(SQLException ex){
-            System.err.println(ex.getMessage());
-        }
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
 
     }
     /*
-    public static void unsecureInsertService(Connection con) throws SQLException{
-        String sql = "INSERT INTO service(service_name) VALUES ("Blood Work Diagnostics");";
-        Statement st = con.createStatement();
-        st.executeUpdate(sql);
+    public static void secureInsertService() throws SQLException {
+        Connection con = DriverManager.getConnection(url);
+        String sql = "INSERT INTO service(service_name, service_type, description, base_price, estimated_duration) VALUES (?,?,?,?,?)";
 
+        PreparedStatement pst = con.prepareStatement(sql);
     }
      */
 }

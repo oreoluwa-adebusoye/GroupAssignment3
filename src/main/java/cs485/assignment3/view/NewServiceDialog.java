@@ -65,10 +65,10 @@ public class NewServiceDialog extends JDialog {
 
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
-                                               public void actionPerformed(ActionEvent e) {
-                                                   onCancel();
-                                               }
-                                           }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 

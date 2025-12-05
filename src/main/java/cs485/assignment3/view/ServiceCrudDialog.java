@@ -54,6 +54,26 @@ public class ServiceCrudDialog extends JDialog {
                 deleteService();
             }
         });
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateService();
+            }
+        });
+    }
+
+    private void updateService() {
+        try {
+            Service s = (Service) listServiceUI.getSelectedValue();
+            if (s != null) {
+                UpdateServiceDialog dialog = new UpdateServiceDialog(s);
+                dialog.pack();
+                dialog.setVisible(true);
+                populate();
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     //deletes the service row
